@@ -1,0 +1,14 @@
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Elementos por página</mat-label>
+    <mat-select [(ngModel)]="pokemonNumberSelected" (selectionChange)="getPokemonList()">
+        <mat-option value="50">50 pokémons</mat-option>
+        <mat-option value="100">100 pokémons</mat-option>
+        <mat-option value="200">200 pokémons</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<ul>
+    <app-pokemon-item *ngFor="let pokemon of listadoPokemon; let i = index" [pokemonInput]="pokemon"></app-pokemon-item>
+</ul>
